@@ -1,0 +1,50 @@
+<div class="container mt-4">
+  <%= @schedule.title %></p>
+</div>
+
+<div class="container mt-4">
+  <div class="row mt-4">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <p><strong>開始日:</strong> <%= @schedule.start_date.strftime('%Y/%m/%d') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <p><strong>終了日:</strong> <%= @schedule.end_date.strftime('%Y/%m/%d') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <p><strong>終日:</strong> <%= @schedule.all_day ? '○' : '' %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <p><strong>スケジュールメモ:</strong></p>
+          <p><%= @schedule.schedule_memo %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container mt-2">
+  <%= link_to '編集', edit_schedule_path(@schedule), class: 'btn btn-primary' %>
+  <%= link_to '一覧に戻る', schedules_path, class: 'btn btn-secondary' %>
+</div>
