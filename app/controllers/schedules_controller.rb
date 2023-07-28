@@ -13,7 +13,7 @@ class SchedulesController < ApplicationController
       flash[:notice] = 'スケジュールが作成されました。'
       redirect_to schedules_path
     else
-      flash.now[:alert] = '必須項目に記入してください。'
+      flash.now[:alert] = 'エラーが発生しています。注意文を読んで記入してください。'
       render 'new', status: :unprocessable_entity
     end
   end
@@ -32,7 +32,7 @@ class SchedulesController < ApplicationController
       flash[:notice] = 'スケジュールが更新されました。'
       redirect_to schedule_path(@schedule)
     else
-      flash.now[:alert] = '必須項目に記入してください。'
+      flash.now[:alert] = 'エラーが発生しています。注意文を読んで記入してください。'
       render 'edit', status: :unprocessable_entity
     end
   end

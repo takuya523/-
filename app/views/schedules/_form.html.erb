@@ -1,41 +1,78 @@
-<%= form_with model: schedule do |form| %>
-  <% if schedule.errors.any? %>
-    <div id="error_explanation">
-
-      <ul>
-        <% schedule.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+<div class="container mt-4">
+  <div class="card mb-4">
+    <div class="card-body">
+      <%= form_with model: schedule do |form| %>
+        <% if schedule.errors.any? %>
+          <div id="error_explanation">
+            <ul>
+              <% schedule.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
+
+        <div class="card mb-2">
+          <div class="card-body">
+            <div class="field">
+              <%= form.label :title, 'タイトル' %>
+              <%= form.text_field :title %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <div class="field">
+                  <%= form.label :start_date, '開始日' %>
+                  <%= form.date_field :start_date %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <div class="field">
+                  <%= form.label :end_date, '終了日' %>
+                  <%= form.date_field :end_date %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-2">
+          <div class="card-body">
+            <div class="field">
+              <%= form.label :all_day, '終日の場合はチェックを入れてください' %>
+              <%= form.check_box :all_day %>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-2">
+          <div class="card-body">
+            <div class="field">
+              <%= form.label :schedule_memo, 'スケジュールメモ' %>
+              <%= form.text_area :schedule_memo %>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions text-right">
+          <%= form.submit button_text, class: 'btn btn-primary' %>
+          <%= link_to 'キャンセル', schedules_path, class: 'btn btn-secondary' %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title, 'タイトル' %>
-    <%= form.text_field :title %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :start_date, '開始日' %>
-    <%= form.date_field :start_date %>
-  </div>
 
-  <div class="field">
-    <%= form.label :end_date, '終了日' %>
-    <%= form.date_field :end_date %>
-  </div>
 
-  <div class="field">
-    <%= form.label :all_day, '終日の場合はチェックを入れてください' %>
-    <%= form.check_box :all_day %>
-  </div>
 
-  <div class="field">
-    <%= form.label :schedule_memo, 'スケジュールメモ' %>
-    <%= form.text_area :schedule_memo %>
-  </div>
 
-  <div class="actions">
-    <%= form.submit button_text, class: 'btn btn-primary' %>
-  </div>
-<% end %>
+

@@ -6,7 +6,7 @@
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag 'application', media: 'all' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', type: "module" %>
 
   <% Time.zone = 'Tokyo' %>
 
@@ -44,9 +44,11 @@
     <%= yield %>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="module" src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script type="module" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
 
